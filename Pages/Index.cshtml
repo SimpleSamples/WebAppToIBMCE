@@ -7,5 +7,20 @@
 <div class="text-center">
 <h1 class="display-4">Webapp To IBM Code Engine</h1>
 <p>This is a sample ASP.NET Core application pushed to a GitHub repository
-   	and deployed as an IBM Cloud Code Engine application.</p>
+   	and deployed as an IBM Cloud Code Engine application. This is just a sample,
+   	I intend to create multiple sites after I have this working. Currently I am
+   	working on using Cloudflare for the DNS so I can have the root/apex/naked
+   	domain name as well as the www subdomain. The domain to be used for testing
+   	purposes is whatversam.com.</p>
+<p>The project was created using <code>dotnet new Webapp</code>.</p>
+<p>IBM describes their Cloud Code Engine hosting as being serverless
+	but this shows it supports an ASP.NET Core website.</p>  
+<p>Using Cloudflare and the domain whatversam.com the website was getting
+	redirect loop errors. So I set the Cloudflare SSL option in the SSL/TLS app
+	Overview tab to <i>Full</i>. (See
+	<a href="https://support.cloudflare.com/hc/en-us/articles/115003011431#525error">
+	Troubleshooting Cloudflare 5XX errors – Cloudflare Help Center</a>).</p>
+<p>Now I am getting:</p>
+<pre><blockquote>Error 525 Ray ID: 704e64894e697d6e • 2022-05-02 05:35:18 UTC
+SSL handshake failed</blockquote></pre>
 </div>
