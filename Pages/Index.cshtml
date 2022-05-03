@@ -6,6 +6,7 @@
 
 <div class="text-center">
 <h1 class="display-4">Webapp To IBM Code Engine</h1>
+</div>
 <p>This is a sample ASP.NET Core application pushed to a GitHub repository
    	and deployed as an IBM Cloud Code Engine application. This is just a sample,
    	I intend to create multiple sites after I have this working. Currently I am
@@ -14,13 +15,27 @@
    	purposes is whatversam.com.</p>
 <p>The project was created using <code>dotnet new Webapp</code>.</p>
 <p>IBM describes their Cloud Code Engine hosting as being serverless
-	but this shows it supports an ASP.NET Core website.</p>  
+	but this shows it supports an ASP.NET Core website.</p>
+<p>I created the Cloud Engine project and application by going to my IBM Cloud
+Dashboard then going to Code Engine then under <i>Start with source code</i> I
+clicked <i>Start creating</i>. With the <i>Application</i> box selected I
+supplied a name then clicked on <i>Create project</i> and then I created a
+project. Then under <i>Choose the code to run</i> I supplied a repository
+then clicked <i>Specify build details</i>. I filled in the branch name and
+kept the other defaults then clicked <i>Next</i>. In the next page I clicked
+the radio button for <i>Cloud Native Buildpack</i> then clicked <i>Next</i>.
+I entered a namespace and repository (image name) then clicked <i>Done</i>.</p>  
 <p>Using Cloudflare and the domain whatversam.com the website was getting
 	redirect loop errors. So I set the Cloudflare SSL option in the SSL/TLS app
 	Overview tab to <i>Full</i>. (See
 	<a href="https://support.cloudflare.com/hc/en-us/articles/115003011431#525error">
 	Troubleshooting Cloudflare 5XX errors – Cloudflare Help Center</a>).</p>
-<p>Now I am getting:</p>
+<p>Then I was getting:</p>
 <pre><blockquote>Error 525 Ray ID: 704e64894e697d6e • 2022-05-02 05:35:18 UTC
 SSL handshake failed</blockquote></pre>
-</div>
+<p>Also for the build I was exceeding my storage quota.
+The error message referred to
+<a href="https://cloud.ibm.com/docs/Registry/registry_quota.html#registry_quota">
+Container Registry docs | IBM Cloud Docs</a> but that does not help. We need to
+click on CLI reference then find the command to lists all images, such as:</p>
+<pre><blockquote>ibmcloud cr image-digests</blockquote></pre></div>
